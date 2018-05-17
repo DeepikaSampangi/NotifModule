@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const Nexmo = require('nexmo');
 const socketio = require('socket.io');
-var count=0;
+var count=1;
 
 
 var dt = new Date();
@@ -72,28 +72,29 @@ console.log(utcDate);
 const io = socketio(server);
 io.on('connection', (socket) => {
   console.log('Connected');
-  count++;
+   //Auctioneer Section
  /* if(count==1){
-    SendT('918008030261',"SMART TRADE,Success " + utcDate);
+    SendT('918008030261',"SMART TRADE,Success " + utcDate);count=2;
    }
   
   else if(count==2){
-    SendT('918008030261',"EndAuction: "+ utcDate);
+    SendT('918008030261',"EndAuction: "+ utcDate);count=3;
+    
+  }
+  else if(count==3){
+    SendT('919705314527',"Congrats Won Bid "+ utcDate);count=2;
     
   }*/
-/*
-  count++;
-  if(count==1){
-    SendT('919705314527',"SMART TRADE,Success "+ utcDate);
+  
+ //Bidder Section 
+ /* if(count==1){
+    SendT('919705314527',"SMART TRADE,Success "+ utcDate);count=2;
    }
   else if(count==2){
     SendT('919705314527',"BidPlaced "+ utcDate);
-  }
-  else if(count==3){
-    SendT('919705314527',"Congrats Won Bid "+ utcDate);
-    
-  }
-*/
+  }*/
+
+  
   io.on('disconnect', () => {
     console.log('Disconnected');
   })
