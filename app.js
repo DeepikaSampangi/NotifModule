@@ -73,15 +73,15 @@ const io = socketio(server);
 io.on('connection', (socket) => {
   console.log('Connected');
    //Auctioneer Section
- /* if(count==1){
+  /*if(count==1){
     SendT('918008030261',"SMART TRADE,Success " + utcDate);count=2;
    }
   
-  else if(count==2){
+   if(count==2){
     SendT('918008030261',"EndAuction: "+ utcDate);count=3;
     
   }
-  else if(count==3){
+  /*else if(count==3){
     SendT('919705314527',"Congrats Won Bid "+ utcDate);count=2;
     
   }*/
