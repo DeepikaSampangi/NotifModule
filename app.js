@@ -12,8 +12,8 @@ var utcDate = dt.toLocaleString();
 
 // Init Nexmo
 const nexmo = new Nexmo({
-  apiKey: 'ea62c5a1',
-  apiSecret: 'XT8ifzgtHlg3gZHp'
+  apiKey: 'xxxxxxxx',
+  apiSecret: 'xxxxxxxxxxxxxxxx'
 }, {debug: true});
 
 // Init app
@@ -35,33 +35,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-// Catch form submit
-/*app.post('/', (req, res) => {
-  // res.send(req.body);
-  // console.log(req.body);
-  const number = req.body.number;
-  const text = req.body.text;
 
-  nexmo.message.sendSms(
-    'YOURVURTUALNUMBER', number, text, { type: 'unicode' },
-    (err, responseData) => {
-      if(err) {
-        console.log(err);
-      } else {
-        console.dir(responseData);
-        // Get data from response
-        const data = {
-          id: responseData.messages[0]['message-id'],
-          number: responseData.messages[0]['to']
-        }
-
-        // Emit to the client
-        io.emit('smsStatus', data);
-      }
-    }
-  );
-});
-*/
 // Define port
 const port = 3000;
 
@@ -103,7 +77,7 @@ io.on('connection', (socket) => {
 function SendT(number, text){
   
   nexmo.message.sendSms(
-    '918886211191', number, text, { type: 'unicode' },
+    'xxxxxxxxxx', number, text, { type: 'unicode' },
     (err, responseData) => {
       if(err) {
         console.log(err);
